@@ -26,9 +26,9 @@
 		>
 			<div
 				data-swapy-item="a"
-				class="bg-blue-500 h-full rounded-md flex place-items-center justify-center"
+				class="bg-blue-500 h-full rounded-md relative"
 			>
-				<div class="flex flex-col">
+				<div class="flex flex-col overflow-y-auto max-h-full">
 					{#each data as data}
 						<BigComponent {data} />
 					{/each}
@@ -41,9 +41,9 @@
 		>
 			<div
 				data-swapy-item="b"
-				class="bg-red-500 h-full rounded-md flex place-items-center justify-center"
+				class="bg-red-500 h-full rounded-md relative"
 			>
-				<div class="flex flex-col">
+				<div class="flex flex-col overflow-y-auto max-h-full">
 					{#each data as data}
 						<BigComponent {data} />
 					{/each}
@@ -56,13 +56,13 @@
 		>
 			<div
 				data-swapy-item="c"
-				class="bg-green-500 h-full rounded-md flex place-items-center justify-center"
+				class="bg-green-500 h-full rounded-md flex place-items-center justify-center relative"
 			>
-				<div class="flex flex-col">
-					{#each data as data}
-						<BigComponent {data} />
-					{/each}
-				</div>
+			<div class="flex flex-col overflow-y-auto max-h-full">
+				{#each data as data}
+					<BigComponent {data} />
+				{/each}
+			</div>
 			</div>
 		</div>
 	</div>
