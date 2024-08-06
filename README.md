@@ -1,14 +1,23 @@
-# Swapy Issue
-Issue repro for [swapy](https://swapy.tahazsh.com/).
+# The Fix
 
-# Whats the issue?
+In [v0.1.1](https://github.com/TahaSh/swapy/releases/tag/v0.1.1) a `data-swapy-exclude` attribute was added to improve performance on large child items.
 
-When using large amounts of content inside of a `swapy-item` performance degrades significantly when resizing screen. `animation: 'none'` doesn't make any difference when resizing.
+```svelte
+<!-- Added `data-swapy-exclude` to list parent -->
 
-## Steps
+<div class="..." data-swapy-exclude>
+	{#each data as data}
+		<BigComponent {data} />
+	{/each}
+</div>
+```
 
-- `pnpm install`
-- `pnpm dev`
-- Open to `localhost:5173` and try resizing the screen either with dev tools or other means.
-- You'll notice it is extremely slow and animates between states
-- Try turning off animations with `animation: 'none'` and notice the issue persists.
+You can see the performance gains for yourself:
+
+```bash
+npm install
+
+npm run dev
+```
+
+Thank you to [TahaSh](https://github.com/TahaSh) for the fix.

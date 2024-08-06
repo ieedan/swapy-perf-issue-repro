@@ -28,6 +28,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"swapy": "^0.1.0"
+		"swapy": "^0.1.1"
 	}
 }
